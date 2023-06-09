@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <p>빈칸을 입력하세요</p>
+    <form action="http://www.google.com" method="get"> <!--태그의 내용을 action에 보내는게 form-->
+        이름 : <input type="text" name="unname" /><br>
+        아이디 : <input type="text" name="uid" /><br>
+        비밀번호 : <input type="password" name="upw" /><br> 
+        사진 : <input type="file" name="uimg" /><br>
+
+        성별구분 : <input type="radio" name="gender" value="m"> 남,
+        <input type="radio" name="gender" value="w"> 여 <br />
+
+        사용언어 : <input type="checkbox" name="lan" value="kor" checked="checked" /> 한글,
+        <input type="checkbox" name="lan" value="eng" checked="checked" /> 영어,
+        <input type="checkbox" name="lan" value="jap" checked="checked" /> 일어,
+        <input type="checkbox" name="lan" value="chi" checked="checked" /> 중국어<br />
+        <!-- checked는 미리 체크되어있는것 / checkbox는 복수선택가능 radio는 한개만 가능 / name은 같아야함 -->
+
+        자기소개 : <textarea rows="10" cols="30"> 간단하게 입력하세요</textarea><br /> <!--rows는 열 / cols는 행-->
+
+        국적 : <select>
+            <option>KOREA</option>
+            <option>USA</option>
+            <option>JAPAN</option>
+            <option>CHINA</option>
+            </select><br>
+
+            <!-- select는 콤보상자라고 불림 -->
+
+        좋아하는 음식 : <select multiple = "multiple"> <!---multiple은 다중선택 (ctrl로 선택가능)-->
+            <option>김치</option>
+            <option>불고기</option>
+            <option>파전</option>
+            <option>비빔밥</option>
+            </select><br>
+
+            <!-- select는 콤보상자라고 불림 -->
+
+        <input type="submit" value="제출"/>
+        <input type="reset" value="초기화"/>
+    </form>
+</body>
+</html>
