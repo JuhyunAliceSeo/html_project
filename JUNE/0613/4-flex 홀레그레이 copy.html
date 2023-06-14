@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      header, nav, main, aside, footer {
+        border: 4px solid;
+        padding: 20px;
+        text-align: center;
+         }
+
+      header {
+         border-color: hsl(360deg 100% 50%);
+         background-color: hsl(360deg 100% 50% / 0.2);
+        }
+
+nav {
+  border-color: hsl(30deg 100% 50%);
+  background-color: hsl(30deg 100% 50% / 0.2);
+}
+
+main {
+  border-color: hsl(180deg 100% 30%);
+  background-color: hsl(180deg 100% 30% / 0.2);
+}
+
+aside {
+  border-color: hsl(210deg 100% 50%);
+  background-color: hsl(210deg 100% 50% / 0.2);
+}
+
+footer {
+  border-color: hsl(300deg 100% 50%);
+  background-color: hsl(300deg 100% 50% / 0.2);
+}
+
+body {
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+  .wrapper{
+    display: flex; /*자식까지만 적용*/
+    flex-direction: column;
+    height: 100%;
+  }
+  section{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex:1;
+  }
+  main{
+    flex:1;
+  }
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>Header</header>
+        <section>
+          <nav>Nav</nav>
+          <main>Main</main>
+          <aside>Aside</aside>
+        </section>
+        <footer>Footer</footer>
+      </div>
+    </div>
+</body>
+</html>
