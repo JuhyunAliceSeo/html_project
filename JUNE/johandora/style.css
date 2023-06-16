@@ -1,0 +1,173 @@
+@charset "utf-8";/*shylesheet에 쓰이는 문자인코딩*/
+
+@font-face {
+    font-family: 'HANAMDAUM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/HANAMDAUM.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TTWanjudaedunsancheB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+    body{
+        display: flex; /*위치*/
+        flex-direction: row; /*위치*/
+        background-image: linear-gradient( 180deg, skyblue, white 50%); /*그라데이션 (할수있는위치, 위에색깔, 아래색깔 퍼센트)*/
+    }
+    #container{ /*전체 컨텐츠박스*/
+        width: 75%;
+        margin: 0 auto;
+        background-color: white;
+        border:1px solid #ccc; 
+    } 
+    #mainHeader{
+        width: 100%;
+        margin: 0px auto;
+        position: relative;
+    }    
+    .header1{ 
+        font-family: 'TTWanjudaedunsancheB';
+        font-size: 4.5rem;
+        color: yellow;
+        padding-left: 20px; /*yohandora 글씨체*/
+        position: absolute;
+        width: 100%;
+        text-shadow: 2px 2px grey; /*글씨체 그림자*/
+    }  
+    .header-img{width: 100%; height: 366px;}   
+    .header-img img{ width: 100%; height: 100%;} 
+
+
+    #mainNav > ul{
+        display: flex; /*위치*/        
+        flex-flow: row nowrap; /*열로 정렬되고 한줄로 되야하니까 flex-flow로 row(열) + nowrap(한줄)*/  
+        justify-content: space-evenly; /* 컨텐트 간격간 사이 */
+        background-color: darkgreen;
+        height: 5em;
+        line-height: 5em;
+        margin: 0px;
+        padding: 0px;
+    }
+    #mainNav >ul >li{
+        width: 15%;
+        color: white;
+        list-style: none;/*list 앞에 deco를 없앨때 써야함*/
+        font-size: 1.2rem; 
+        font-family: 'HANAMDAUM'; /*폰트스타일 / 앞에 @style 줘야함*/ 
+    }
+    #mainNav ul li a{
+        text-decoration: none; /*a에 하이퍼링크 밑줄 없애기*/
+        color: white; /*글씨색상 없애기*/
+    }
+        
+      
+    #content{ display: flex; }  /*위치*/
+    #content-intro{
+        flex-direction: row; /*content 아들 위치*/
+        padding: 15px;
+    }
+    #sidebar{
+        background-color: mistyrose;
+        padding: 1rem;
+        width: 20rem;
+        flex-direction: row; /*content 아들 위치*/
+    }
+    #sidebar img/*이미지 파일*/{ 
+        width: 17em; 
+        box-sizing: border-box;/*hover효과준 img를 알아서 borboxbox 사이즈에 맞춰달라*/ 
+    } 
+    #sidebar img:hover { border: 2px solid black; }/*이미지에 마우스 올렸을때 선택되는것 같은 효과*/
+        
+        
+    #footer{
+        background-color: black;
+        color:white;
+        text-align: center;
+        padding: 1.5rem;
+    }
+        
+
+    /*반응형 주기--------------------------------------------------*/
+    @media screen and (max-width:1200px) {
+            #container{ width: 60%; }
+            .header-img{ height: 160px; }
+            #mainNav ul li a{ font-size: 0.7rem; }
+            #content{
+            display: flex;
+            flex-direction: column;
+        }
+        #sidebar{
+            width: 96%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #sidebar img{ width: 15em; }
+    }
+        
+
+    @media screen and (max-width:1040px) {
+        #container{ width: 60%; }
+        .header-img{ height: 250px; }
+        #mainNav ul li a{ font-size: 1rem; }
+        #content{
+           display: flex;
+           flex-direction: column;
+        }
+        #sidebar{
+            width: 90%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;/*사진을 밑으로 내려줌*/
+            padding : 1px;
+        }
+          #sidebar img{ width: 14rem; }
+        }
+
+
+        @media screen and (max-width:960px) {
+          #container{ width: 60%; }
+          .header1{ font-size: 3rem; }
+          .header-img{
+            height: 200px;
+            background-color: black;
+            }
+          .header-img img{ display: none; }/*이미지 없애는 구문*/
+          #mainNav ul{
+            flex-direction: column;
+            background-color: white;
+            height: auto;
+            padding: 1rem; /*li값의 width값이 맞춰져서 좌우의 패딩값을 맞춰줌*/
+          }
+          #mainNav ul li {
+            width: 100%;
+            color:black;
+            border-radius: 10%;
+            border: 1px solid #ccc;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 0.5rem;
+          }
+          #mainNav ul li a{
+            font-size: 1rem;
+            color: inherit; /*부모컬러 따라감*/
+          }
+          #content{
+           display: flex;
+           flex-direction: column;
+          }
+          #sidebar{
+            width: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            padding : 1.5em;
+            box-sizing: border-box;/*박스를 패딩에 맞춰서 알아서 넣어줘라는 의미*/
+            justify-content: center;/*사진을 content안에 가운데 맞춤*/
+          }
+          #sidebar img{ width: 100%; }
+        }
+
